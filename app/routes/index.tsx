@@ -5,7 +5,7 @@ import { createPost, getPosts } from '~/services/posts.server';
 import type { Post } from '~/services/posts.server';
 import { Post as PostComponent } from '~/components/Post';
 import { PostForm } from '~/components/PostForm';
-import { CreatePost } from '~/services/validations';
+import { CreatePost } from '~/services/validation';
 
 type LoaderData = {
   posts: Post[];
