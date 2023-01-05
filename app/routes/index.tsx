@@ -13,15 +13,15 @@ type LoaderData = {
 
 type ActionData = {
   error: {
-    formError: string[];
-    fieldErrors: {
-      title: string[];
-      body: string;
+    formError?: string[];
+    fieldErrors?: {
+      title?: string[];
+      body?: string[];
     };
   };
   fields: {
-    title: string;
-    body: string;
+    title?: string;
+    body?: string;
   };
 };
 
@@ -42,7 +42,7 @@ export const action: ActionFunction = async ({ request }) => {
     );
   }
 
-  const post = await createPost({
+  await createPost({
     title: result.data.title ?? null,
     body: result.data.body,
   });
@@ -57,7 +57,7 @@ export const loader: LoaderFunction = async () => {
 
 export default function Index() {
   const { posts } = useLoaderData<LoaderData>();
-  const data = useActionData<ActionData>();
+  const formData = useActionData<ActionData>();
   return (
     <div className='flex flex-col items-center'>
       <div className='mb-8'>
