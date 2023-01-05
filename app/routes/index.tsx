@@ -65,7 +65,7 @@ export default function Index() {
           method='post'
           action='/?index'
           error={formData?.error}
-          fields={formData.fields}
+          fields={formData?.fields}
         />
       </div>
       <ul>
